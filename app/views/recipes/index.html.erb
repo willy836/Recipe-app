@@ -1,0 +1,13 @@
+<section class="recipe-list">
+  <ul>
+    <% @recipes.order(:created_at).each do |recipe| %>
+    <li>
+      <div>
+        <%= link_to recipe.name, recipe_path(recipe.id) %>
+        <%= link_to "Remove", recipe_path(recipe.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+      </div>
+      <article><%= recipe.description %></article>
+    </li>
+     <% end %>
+  </ul>
+</section>
