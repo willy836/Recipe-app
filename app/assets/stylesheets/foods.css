@@ -1,0 +1,52 @@
+.foods-list h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.foods-list {
+  width: 95%;
+  margin: 30px auto;
+}
+
+table {
+  width: 90%;
+  margin: 40px auto;
+  border-collapse: collapse;
+}
+
+.row-headings {
+  background: #bbb;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.btn-container button {
+  padding: 10px 20px;
+  background: rgb(113, 230, 238);
+  border-radius: 5px;
+  border: none;
+}
+
+.btn-container button a {
+  text-decoration: none;
+  color: #000;
+}
+
+.dlt-btn {
+  border: none;
+  color: rgb(32, 132, 224);
+  text-decoration: underline;
+  cursor: pointer;
+}
