@@ -9,8 +9,11 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
+    <%= render "shared/nav" %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <section class="app-container">
+      <%= yield %>
+    </section>
   </body>
 </html>
