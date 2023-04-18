@@ -1,6 +1,11 @@
 class RecipeFoodsController < ApplicationController
   before_action :set_recipe, only: %i[edit create destroy]
 
+  def new
+    @recipe_food = RecipeFood.new
+    @foods = Food.where(user: current_user)
+  end
+
   def create
     @recipe_food = @recipe.recipe_foods.build(recipe_foods_params)
     if @recipe_food.save
@@ -17,7 +22,7 @@ class RecipeFoodsController < ApplicationController
   end
 
   def destroy
-    @ingredient = RecipeFood.find(params{:id})
+    @ingredient = RecipeFood.find(params { :id })
     @ingredient.destroy
     redirect_to recipe_url(params[:recipe_id]), notice: 'Ingredient was successfully destroyed.'
   end
