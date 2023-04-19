@@ -1,7 +1,7 @@
 <h1>Add Ingredient</h1>
 
 <div>
-  <%= form_with model: @recipe_food, url: recipe_recipe_foods_path do |form| %>
+  <%= form_with model: @recipe_food, url: recipe_recipe_foods_path, local: true, scope: @recipe_food, data: { turbo: false } do |form| %>
     <p>Select Ingredient</p>
     <br>
     <p>Food</p>

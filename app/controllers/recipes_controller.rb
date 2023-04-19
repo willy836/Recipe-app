@@ -1,10 +1,15 @@
 class RecipesController < ApplicationController
+  before_action :set_recipe, only: %i[show edit update destroy]
+  
   def index
     @user = current_user
     @recipes = @user.recipes
   end
 
-  def show; end
+  def show
+    @recipe = Recipe.find(params[:id])
+    @ingredients = @recipe.recipe_foods.where(recipe: @recipe)
+  end
 
   def new
     @user = current_user
@@ -14,6 +19,11 @@ class RecipesController < ApplicationController
   def create
     @user = current_user
     @recipe = @user.recipes.build(recipe_params)
+    if @recipe.save
+      redirect_to recipes_url, notice: 'Recipe was successfully created.'
+    else
+      redirect_to recipes_path, alert: 'Something went wrong! Try again'
+    end
   end
 
   def destroy
