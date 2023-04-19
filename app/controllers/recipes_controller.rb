@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
-  
+
   def index
     @user = current_user
     @recipes = @user.recipes

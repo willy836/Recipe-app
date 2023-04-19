@@ -6,8 +6,8 @@ describe Recipe, type: :model do
       name: 'Tequila Mojito',
       preparation_time: '10',
       cooking_time: 10,
-      description: "The  combination of good aged tequila, mint, and sugary syrup",
-      public: true, 
+      description: 'The  combination of good aged tequila, mint, and sugary syrup',
+      public: true,
       user_id: 1
     )
   end
