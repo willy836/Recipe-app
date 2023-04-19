@@ -1,0 +1,20 @@
+.shopping-list-container {
+  margin-top: 30px;
+}
+
+.shopping-list-h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.food-to-buy {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 700;
+}

@@ -1,12 +1,12 @@
-<section>
-  <h1>Shopping List</h1>
-  <div>
+<section class="shopping-list-container">
+  <h1 class="shopping-list-h1">Shopping List</h1>
+  <div class="food-to-buy">
     <p>Amount of food items to buy: <%= @foods.count %></p>
     <p>Total value of food needed: $<%= @total_price %></p>
   </div>
   <table>
     <thead>
-      <tr>
+      <tr class="row-headings">
         <th>Food</th>
         <th>Quantity</th>
         <th>Price</th>
