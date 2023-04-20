@@ -46,3 +46,10 @@
   width: 50%;
   justify-content: flex-end;
 }
+
+.btn-sign-out {
+  padding: 10px 20px;
+  background: rgb(113, 230, 238);
+  border-radius: 5px;
+  border: none;
+}
