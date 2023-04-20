@@ -1,5 +1,7 @@
 @import "foods";
 @import "general_shopping";
+@import "recipes";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *,
 *::before,
@@ -7,6 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 /* -----------------------NAVBAR------------------- */
@@ -38,4 +41,44 @@
 
 .alert {
   color: red;
+}
+
+/* -----------------------FORMS------------------- */
+
+form div {
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type=text],
+input[type=number],
+textarea,
+select {
+  padding: 0.5rem;
+  width: 50%;
+}
+
+label {
+  margin-bottom: 4px;
+}
+
+.form-label {
+  padding: 5px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+input[type=submit] {
+  padding: 10px 20px;
+  background: #71e6ee;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
 }

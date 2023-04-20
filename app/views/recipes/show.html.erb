@@ -1,12 +1,12 @@
-<div class="">
-  <div class="">
-    <%= link_to 'Back', recipes_path, class: "btn btn-primary" %>
+<div class="recipe-show">
+  <div class="top-links">
+    <%= link_to 'Back', recipes_path, class: "btn-back" %>
     <% if @recipe.user_id == current_user.id %>
-      <%= link_to 'Add Food', new_food_url, :class => "btn btn-dark"%>
+      <%= link_to 'Add Food', new_food_url, :class => "btn-add"%>
     <% end %>
   </div>
-  <h2 class=""><%= @recipe.name %></h2>
-  <div class="">
+  <h2 class="recipe-name"><%= @recipe.name %></h2>
+  <div class="recipe-details">
     <div class="">
       <h3 class="">Preparation Time: <%= @recipe.preparation_time %>min(s)</h3>
     </div>
@@ -19,7 +19,7 @@
     </article>
   </div>
 
-  <div>
+  <div class="recipe-toggler">
     <% if @recipe.public %>
       <p>Public</p>
       <%= button_to "Change public to private", recipe_path(@recipe), method: :patch%>
@@ -30,9 +30,9 @@
   </div>
 
   <% if @recipe.user_id == current_user.id %>
-    <section class="">
-      <%= link_to 'Generate Shopping List', class: "btn btn-primary" %>
-      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: "btn btn-primary" %>
+    <section class="bottom-links">
+      <%= link_to 'Generate Shopping List', class: "btn-add" %>
+      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: "btn-add" %>
     </section>
   <% end %>
 
@@ -51,9 +51,9 @@
           <td><%= ingredient.food.name %></th>
           <td><%= ingredient.quantity %> <%= ingredient.food.measurement_unit %></td>
           <td>$ <%= ingredient.food.price %></td>
-           <td class="">
+           <td class="ingredient-actions">
             <%= link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: ingredient.id) %>
-            <%= button_to "Remove", recipe_recipe_food_path(recipe_id: @recipe.id, id: ingredient.id), method: :delete %>
+            <%= button_to "Remove", recipe_recipe_food_path(recipe_id: @recipe.id, id: ingredient.id), method: :delete, class: "btn-del" %>
           </td>
         </tr>
       <% end %>
