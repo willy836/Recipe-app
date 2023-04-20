@@ -1,21 +1,19 @@
-<div class="">
+<div class="public-recipes-cont">
   <h2 class="">Public Recipes</h2>
   <% @recipes.each do |recipe|%>
-  <div class="">
-  <div class="">
-    <div class="">
-      <%= link_to recipe_path(recipe.id), class: "" do %>
-      <div class="">
-        <h5 class=""><%= recipe.name.capitalize %></h3>
+  <div class="recipes-list">
+    <%= link_to recipe_path(recipe.id), class: "" do %>
+    <div class="pub-recipe">
+      <div class="recipe-left">
+        <h3 class=""><%= recipe.name.capitalize %></h3>
         <p class="">By: <%= recipe.user.name.capitalize %></p>
       </div>
-        <div class="">
+        <article>
           <p class="">Total food items: <%= @ingredients.where(recipe: recipe).count %></p>
           <p class="">Total Price: $ <%= @ingredients.where(recipe: recipe).map {|value| value.food.price * value.quantity}.sum %></p>
-        </div>
-      <% end %>
+        </article>
     </div>
-  </div>
+  <% end %>
   </div>
   <% end %>
 </div>

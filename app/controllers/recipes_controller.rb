@@ -38,11 +38,17 @@ class RecipesController < ApplicationController
     end
   end
 
+  def update
+    @recipe.public = !@recipe.public
+    @recipe.save
+    redirect_to recipes_path, notice: 'Recipe was successfully updated.'
+  end
+
   def set_recipe
     @recipe = current_user.recipes.find(params[:id])
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :cooking_time, :preparation_time)
+    params.require(:recipe).permit(:name, :description, :cooking_time, :preparation_time, :public)
   end
 end
