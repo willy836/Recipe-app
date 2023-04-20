@@ -1,15 +1,13 @@
-<h1>Add Ingredient</h1>
-
-<div>
+<div class="ing-form-wrap">
+  <h1>Add Ingredient</h1>
   <%= form_with model: @recipe_food, url: recipe_recipe_foods_path, local: true, scope: @recipe_food, data: { turbo: false } do |form| %>
-    <p>Select Ingredient</p>
-    <br>
-    <p>Food</p>
+    <p class="form-label">Select Ingredient</p>
+    <p class="form-label">Food</p>
     <%= form.select :food_id, @foods.map { |food| [food.name, food.id] }, {}, { class:'form-select'} %>
     <br>
-    <p>Quantity</p>
+    <p class="form-label">Quantity</p>
     <%= form.number_field :quantity, class:'form-control' %>
     <br>
-    <%= form.submit "Add Ingredient" %>
+    <%= form.submit "Add Ingredient", class: 'ing-form-submit' %>
   <% end %>
 </div>
