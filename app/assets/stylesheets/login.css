@@ -38,3 +38,11 @@
   text-align: center;
   padding: 20px 0;
 }
+
+/* ---------------------SIGN OUT BTN------------------------------ */
+
+.sign-out {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+}
