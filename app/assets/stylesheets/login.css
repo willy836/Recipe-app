@@ -1,0 +1,26 @@
+.login-container {
+  width: 50%;
+  margin: 30px auto;
+}
+
+.login-h2 {
+  font-size: 35px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.field {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+}
+
+.devise-btn {
+  width: 100%;
+  padding: 5px;
+  font-size: 20px;
+}
