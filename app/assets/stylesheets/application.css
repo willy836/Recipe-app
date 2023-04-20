@@ -40,3 +40,9 @@
 .alert {
   color: red;
 }
+
+.sign-out {
+  display: flex;
+  width: 60%;
+  justify-content: flex-end;
+}
