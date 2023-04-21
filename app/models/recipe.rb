@@ -1,6 +1,18 @@
 class Recipe < ApplicationRecord
-  validates :name, presence: true
-
-  has_many :recipe_foods
   belongs_to :user
+  has_many :recipe_foods, dependent: :destroy
+  has_many :foods, through: :recipe_foods, dependent: :destroy
+
+  validates :name, presence: true
+  validates :preparation_time, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :cooking_time, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :description, presence: true
+
+  def total_items
+    recipe_foods.sum(:quantity)
+  end
+
+  def total_price
+    recipe_foods.joins(:food, :recipe).sum('price * quantity')
+  end
 end
