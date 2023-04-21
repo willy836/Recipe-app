@@ -5,7 +5,7 @@ describe 'recipe_food/edit', type: :view do
   before(:example) do
     @user = User.create(name: 'Ellon', email: 'ellon@gmail.com', password: 'password', confirmed_at: Time.now)
     @recipe = Recipe.create(name: 'Orange Bomb', description: 'Orange and lime vodka', public: true, cooking_time: 3,
-        preparation_time: 1 , user: @user)
+                            preparation_time: 1, user: @user)
     @food = Food.create(name: 'orange', measurement_unit: 'kg', price: 3, user: @user)
     @recipe_food = RecipeFood.create(recipe: @recipe, food: @food, quantity: 1)
     sign_in @user

@@ -5,7 +5,7 @@ describe 'recipes/index', type: :view do
   before(:example) do
     @user = User.create(name: 'Ellon', email: 'ellon@gmail.com', password: 'password', confirmed_at: Time.now)
     @recipe = Recipe.create(name: 'Orange Bomb', description: 'Orange and lime vodka', public: true, cooking_time: 3,
-        preparation_time: 1 , user: @user)
+                            preparation_time: 1, user: @user)
     sign_in @user
     visit recipes_path
   end
