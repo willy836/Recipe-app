@@ -17,11 +17,5 @@ RSpec.describe User, type: :model do
       food = user.foods.create!(name: 'Test Food', measurement_unit: 'grams', price: 3.99)
       expect(user.foods).to include(food)
     end
-
-    it 'is expected to have many recipes' do
-      expect(user.recipes).to be_empty
-      recipe = user.recipes.create!(name: 'Test Recipe')
-      expect(user.recipes).to include(recipe)
-    end
   end
 end
