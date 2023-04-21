@@ -6,6 +6,7 @@
     <% end %>
   </div>
   <h2 class="recipe-name"><%= @recipe.name %></h2>
+  <div class="recipe-details-wrap">
   <div class="recipe-details">
     <div class="">
       <h3 class="">Preparation Time: <%= @recipe.preparation_time %>min(s)</h3>
@@ -26,6 +27,7 @@
       <p>Private</p>
       <%= button_to "Change public to public", recipe_path(@recipe), method: :patch%>
     <% end %>
+  </div>
   </div>
   <% if @recipe.user_id == current_user.id %>
     <section class="bottom-links">
