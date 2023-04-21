@@ -1,0 +1,61 @@
+<div class="recipe-show">
+  <div class="top-links">
+    <%= link_to 'Back', recipes_path, class: "btn-back" %>
+    <% if @recipe.user_id == current_user.id %>
+      <%= link_to 'Add Food', new_food_url, :class => "btn-add"%>
+    <% end %>
+  </div>
+  <h2 class="recipe-name"><%= @recipe.name %></h2>
+  <div class="recipe-details-wrap">
+  <div class="recipe-details">
+    <div class="">
+      <h3 class="">Preparation Time: <%= @recipe.preparation_time %>min(s)</h3>
+    </div>
+    <h3 class="">
+      Cooking Time: <%= @recipe.cooking_time %>min(s)
+    </h3>
+    <article class="">
+      <h3>Steps</h3>
+      <p><%= @recipe.description %></p>
+    </article>
+  </div>
+  <div class="recipe-toggler">
+    <% if @recipe.public %>
+      <p>Public</p>
+      <%= button_to "Change public to private", recipe_path(@recipe), method: :patch%>
+    <% else %>
+      <p>Private</p>
+      <%= button_to "Change public to public", recipe_path(@recipe), method: :patch%>
+    <% end %>
+  </div>
+  </div>
+  <% if @recipe.user_id == current_user.id %>
+    <section class="bottom-links">
+      <%= link_to 'Generate Shopping List', general_shopping_lists_path, class: "btn-add" %>
+      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: "btn-add" %>
+    </section>
+  <% end %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipe.recipe_foods.each do |ingredient| %>
+        <tr>
+          <td><%= ingredient.food.name %></th>
+          <td><%= ingredient.quantity %> <%= ingredient.food.measurement_unit %></td>
+          <td>$ <%= ingredient.food.price %></td>
+          <td class="ingredient-actions">
+            <%= link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: ingredient.id) %>
+            <%= button_to "Remove", recipe_recipe_food_path(recipe_id: @recipe.id, id: ingredient.id), method: :delete, class: "btn-del" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

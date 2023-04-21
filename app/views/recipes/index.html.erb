@@ -1,0 +1,25 @@
+<% if @recipes.empty? %>
+
+  <div class="">
+    <h2 class="">No recipes available</h2>
+    <%= link_to "Add new recipe", new_recipe_path, class: "btn-add" %>
+  </div>
+
+<% else %>
+  <div class="add-links">
+    <%= link_to "Add new recipe", new_recipe_path, class: "btn-add" %>
+  </div>
+  <section class="recipes-list">
+    <ul>
+      <% @recipes.order(:created_at).each do |recipe| %>
+      <li class="recipe">
+        <div class="recipe-left">
+          <%= link_to recipe.name, recipe_path(recipe.id), class: "recipe-name" %>
+          <%= button_to "Remove", recipe_path(recipe.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-del" %>
+        </div>
+        <article><%= recipe.description %></article>
+      </li>
+       <% end %>
+    </ul>
+  </section>
+<% end %>

@@ -1,0 +1,55 @@
+/* -------------------LOGIN VIEW------------------- */
+.login-container {
+  width: 50%;
+  margin: 30px auto;
+}
+
+.login-h2 {
+  font-size: 35px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.field {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+}
+
+.devise-btn {
+  width: 100%;
+  padding: 5px;
+  font-size: 20px;
+}
+
+/* -----------------------SIGN UP VIEW---------------------- */
+
+.sign-up-container {
+  width: 50%;
+  margin: 30px auto;
+}
+
+.sign-up-h2 {
+  font-size: 35px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* ---------------------SIGN OUT BTN------------------------------ */
+
+.sign-out {
+  display: flex;
+  width: 57%;
+  justify-content: flex-end;
+}
+
+.btn-sign-out {
+  padding: 10px 20px;
+  background: rgb(113, 230, 238);
+  border-radius: 5px;
+  border: none;
+}
