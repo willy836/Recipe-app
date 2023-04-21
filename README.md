@@ -110,6 +110,13 @@ To run tests, run the following command:
 - Twitter: [@twitterhandle](https://twitter.com/Kimiri836)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/wilson-kimiri/)
 
+👤 **Ellon M**
+
+- GitHub: [@githubhandle](https://github.com/Ellon-M)
+- Twitter: [@twitterhandle](https://twitter.com/ellonm4)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/ellon-m)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
