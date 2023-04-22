@@ -13,6 +13,6 @@ class Recipe < ApplicationRecord
   end
 
   def total_price
-    recipe_foods.joins(:food, :recipe).sum('price * quantity')
+    recipe_foods.joins(:food, :recipe).sum('price * recipe_foods.quantity')
   end
 end
